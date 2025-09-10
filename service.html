@@ -1,66 +1,107 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Pranav Harwadekar</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Pranav Harwadekar - Service</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Pranav Harwadekar</h1>
-    <nav class="navbar">
+  <!-- Navbar -->
+  <header class="navbar-header">
+    <div class="navbar-container">
+      <div class="navbar-brand">Pranav Harwadekar</div>
+      <nav class="navbar">
         <ul class="nav-list">
-            <li class="nav-item"><a href="index.html">Home</a></li>
-            <li class="nav-item"><a href="portfolio.html">Tech Portfolio</a></li>
-            <li class="nav-item"><a href="qualifications.html">Qualifications</a></li>
-            <li class="nav-item"><a href="service.html">Service</a></li>
-            <li class="nav-item"><a href="genai.html">Hobbies/Timeline</a></li>
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="portfolio.html">Tech Portfolio</a></li>
+          <li class="nav-item"><a href="qualifications.html">Qualifications</a></li>
+          <li class="nav-item"><a href="service.html" class="active">Service</a></li>
+          <li class="nav-item"><a href="genai.html">Hobbies/Timeline</a></li>
         </ul>
-	</nav>
-    <h2>Giving Back</h2>
-    <p>I am deeply passionate about serving the community around me and involving myself in helping the community. Throughout my time at Texas A&M University, I have actively participated in various volunteer activities and leadership roles that have allowed me to give back to the community.</p>
-    <hr>
-    <p>Some of my notable service experiences include:</p>
-    <ul>
-        <li>
-            <p><strong>USA National Youth Ambassador</strong></p>
-            <img src="assets/service1.jpg" alt="Service Photo" width="500" height="400">
-            <p>As a UNICEF USA National Youth Ambassador for 2 consecutive years, I had the privilege of representing UNICEF and advocating for children's rights and well-being.</p>
-        </li>
-        <li>
-            <p><strong>Big Event Volunteer</strong></p>
-            <img src="assets/service2.jpg" alt="Service Photo" width="500" height="400">
-            <p>As a Big Event Volunteer, I participated in Texas A&M's largest day of service helping beautify the community around campus.</p>
-        </li>
-        <li>
-            <p><strong>Tennis Coaching for Youth</strong></p>
-            <img src="assets/service3.jpg" alt="Service Photo" width="250" height="500">
-            <p>As a tennis coach for youth, I have had the opportunity to teach young athletes, helping them to improve their skills on and off the court.</p>
-        </li>
-        <li>
-            <p><strong>Engineering Honors Executive Committee Service Chair</strong></p>
-            <img src="assets/service4.jpg" alt="Service Photo" width="500" height="400">
-            <p>As the Service Chair for the Engineering Honors Executive Committee, I organized various community service events and initiatives to appreciate our faculty, staff, and students.</p>
-        </li>
-        <li>
-            <p><strong>Hope Health Care Volunteer</strong></p>
-            <img src="assets/service5.jpg" alt="Service Photo" width="500" height="200">
-            <p>As a volunteer at Hope Health Care, I provided comfort care as a companion to many old age and underserved people in the community.</p>
-        </li>
-    </ul>
-    <hr>
-    <h2>Impact</h2>
-    <ul>
-        <li><p>Community building</p></li>
-        <li><p>Leadership development</p></li>
-        <li><p>Personal growth</p></li>
-        <li><p>Making a difference</p></li>
-    </ul>
-    <hr>
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:pharwadekar@tamu.edu">pharwadekar@tamu.edu</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/pranavharwadekar/">https://www.linkedin.com/in/pranavharwadekar/</a></p>
-    <p>GitHub: <a href="https://github.com/pharwadekar">https://github.com/pharwadekar</a></p>
-    <p>X: <a href="https://x.com/pharwadekar">https://twitter.com/pharwadekar</a></p>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Page Container -->
+  <div class="page-container">
+
+    <!-- Giving Back Section -->
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__left hero__bio">
+          <h2>Giving Back</h2>
+          <p>
+            I am deeply passionate about serving the community around me and involving myself in helping the community. 
+            Throughout my time at Texas A&M University, I have actively participated in various volunteer activities and leadership roles 
+            that have allowed me to give back to the community.
+          </p>
+        </div>
+        <div class="hero__right">
+          <img src="assets/service0.jpg" alt="Service Highlight">
+        </div>
+      </div>
+    </section>
+    <h2 class="carousel-instruction hero__bio">Click through the carousel to learn more about my service activities.</h2>
+
+    <!-- Activities Carousel -->
+    <section class="about-sections">
+      <div class="about-left">
+        <div class="personality-card">
+          <button class="personality-arrow" id="carousel-prev">&#8249;</button>
+          <div class="personality-content">
+            <img src="assets/service2.jpg" alt="Activity Photo" class="personality-img-large" id="carousel-image">
+          </div>
+          <button class="personality-arrow" id="carousel-next">&#8250;</button>
+        </div>
+        <div class="personality-dots">
+          <span class="personality-dot active" data-index="0"></span>
+          <span class="personality-dot" data-index="1"></span>
+          <span class="personality-dot" data-index="2"></span>
+          <span class="personality-dot" data-index="3"></span>
+          <span class="personality-dot" data-index="4"></span>
+        </div>
+      </div>
+      <!-- Keep this container but empty — JS will fill it -->
+       
+      <div class="about-right" id="carousel-caption"></div>
+    </section>
+
+    <!-- Impact Section -->
+    <section>
+      <h2>Impact</h2>
+      <div class="tag-container">
+        <span class="tag">Community building</span>
+        <span class="tag">Leadership development</span>
+        <span class="tag">Personal growth</span>
+        <span class="tag">Making a difference</span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:pharwadekar@tamu.edu">pharwadekar@tamu.edu</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/pranavharwadekar/" class="footer-icon" target="_blank" aria-label="LinkedIn">
+          <img src="assets/footer1.jpg" alt="LinkedIn" width="32" height="32" />
+        </a>
+        <a href="https://github.com/pharwadekar" class="footer-icon" target="_blank" aria-label="GitHub">
+          <img src="assets/footer2.jpg" alt="GitHub" width="32" height="32" />
+        </a>
+        <a href="https://x.com/pharwadekar" class="footer-icon" target="_blank" aria-label="X">
+          <img src="assets/footer3.jpg" alt="X" width="32" height="32" />
+        </a>
+      </div>
+    </div>
+    <p class="footer-copyright">© 2025 Pranav Harwadekar</p>
+  </footer>
+
+
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
