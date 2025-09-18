@@ -403,8 +403,116 @@ img {
   background: #ff8dc8;
   transform: scale(1.05);
 }
-.qualifications-row { display: flex; gap: 2.5rem; margin: 2.2rem 0 0 0; }
+.qualifications-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
 .qualifications-col h3 { color: #7b5cff; }
+.qualifications-row::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url('under-nav.png') repeat-x center;
+  background-size: auto 100%;
+}
+
+.qualifications-row:last-of-type::after {
+  display: none;
+}
+
+/* Column styling */
+.qualifications-col {
+  flex: 1;
+  padding: 1rem;
+}
+
+.qualifications-row:nth-child(odd) .qualifications-col h3 {
+  font-family: 'Satisfy', cursive;
+  color: #ff69b4;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.qualifications-row:nth-child(odd) .qualifications-col ul {
+  background: #ffe7f1;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  margin: 0;
+  position: relative;
+  list-style-type: none;
+  border: 3px solid #ff69b4;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(255, 105, 180, 0.15);
+}
+
+.qualifications-row:nth-child(even) .qualifications-col h3 {
+  font-family: 'Satisfy', cursive;
+  color: #ff69b4;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.qualifications-row:nth-child(even) .qualifications-col ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+.qualifications-row:nth-child(even) .qualifications-col li {
+  background: #ff69b4;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.15);
+  display: inline-block;
+  font-weight: 600;
+  color: white;
+}
+
+
+.qualifications-row:nth-child(even) .qualifications-col li:nth-child(odd) {
+  background: #ff69b4;
+  color: white;
+}
+
+/* List item styling */
+.qualifications-row:nth-child(odd) .qualifications-col li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.qualifications-row:nth-child(odd) .qualifications-col li::before {
+  content: "•";
+  color: #ff69b4;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -0.3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .qualifications-top {
+    flex-direction: column;
+  }
+  
+  .qualifications-row {
+    flex-direction: column;
+  }
+  
+  .resume-card {
+    width: 280px;
+    height: 280px;
+  }
+}
 
 /* Hobbies */
 .hobbies-section { margin: 2.5rem 0 2rem 0; }
