@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pranav Harwadekar - Service</title>
-  <link rel="stylesheet" href="style.css">
+  <link id="theme-stylesheet" rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Navbar -->
@@ -17,10 +17,12 @@
           <li class="nav-item"><a href="qualifications.html">Qualifications</a></li>
           <li class="nav-item"><a href="service.html" class="active">Service</a></li>
           <li class="nav-item"><a href="genai.html">Hobbies/Timeline</a></li>
+          <li class="nav-item"><button id="themeToggle" class="theme-toggle" type="button">Candy Theme</button></li>
         </ul>
       </nav>
     </div>
   </header>
+  <div id="candy-zigzag" class="candy-zigzag"></div>
 
   <!-- Page Container -->
   <div class="page-container">
@@ -103,5 +105,38 @@
   </div>
 
   <script src="scripts.js"></script>
+  <script>
+    (function() {
+      const btn = document.getElementById('themeToggle');
+      const linkEl = document.getElementById('theme-stylesheet');
+      const THEME_KEY = 'site-theme';
+      
+      if (btn && linkEl) {
+        // Load saved theme on page load
+        const savedTheme = localStorage.getItem(THEME_KEY) || 'default';
+        if (savedTheme === 'candy') {
+          linkEl.setAttribute('href', 'style2.css');
+          btn.textContent = 'Classic Theme';
+        } else {
+          linkEl.setAttribute('href', 'style.css');
+          btn.textContent = 'Candy Theme';
+        }
+        
+        // Handle theme toggle
+        btn.addEventListener('click', function() {
+          const current = linkEl.getAttribute('href') || 'style.css';
+          const next = current.indexOf('style2.css') !== -1 ? 'style.css' : 'style2.css';
+          const theme = next.indexOf('style2.css') !== -1 ? 'candy' : 'default';
+          
+          // Update stylesheet and button text
+          linkEl.setAttribute('href', next);
+          btn.textContent = next.indexOf('style2.css') !== -1 ? 'Classic Theme' : 'Candy Theme';
+          
+          // Save theme preference
+          localStorage.setItem(THEME_KEY, theme);
+        });
+      }
+    })();
+    </script>
 </body>
 </html>

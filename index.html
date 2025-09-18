@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Pranav Harwadekar</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link id="theme-stylesheet" rel="stylesheet" type="text/css" href="style.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <header class="navbar-header">
@@ -16,37 +17,47 @@
           <li class="nav-item"><a href="qualifications.html">Qualifications</a></li>
           <li class="nav-item"><a href="service.html">Service</a></li>
           <li class="nav-item"><a href="genai.html">Hobbies/Timeline</a></li>
+          <li class="nav-item"><button id="themeToggle" class="theme-toggle" type="button">Candy Theme</button></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <div id="candy-zigzag" class="candy-zigzag"></div>
+
   <section class="hero">
     <div class="hero__content">
       <div class="hero__left">
         <div class="hero__bio">
-          <p>Howdy! I am Pranav Harwadekar, a Computer Science Honors student at Texas A&M University. I am an avid problem solver and lifelong learner who is eager to continue growing professionally, and personally. Having previous experience across various industries, leading research, and product development. I interned at McKesson (Supplylogix) as a Software Engineering Intern this past summer, where I built large-scale forecasting pipelines using PySpark and MLflow to optimize pharmacy inventory across 10,000+ sites. Additionally, I have completed data analytics externships with Beats by Dre, and Webacy Inc using Web3. I eventually want to launch a security startup focusing on smart contract risk assessment.</p>
-          <p>On campus, I currently lead the Autonomous Navigation team for Texas A&M's international rover project, where I build ROS2-based navigation and Stereo SLAM systems. My past research experience includes undergraduate ML projects through the Aggie Research Program and hyperspectral imaging algorithm development in CUDA and C++. I've also developed and launched apps on the App Store.</p>
-          <p>In addition to my technical skillset, I am developing my leadership skills by serving as a Cengage Student Ambassador, Engineering Honors Executive Committee Service Chair, formerly served as UNICEF USA National Youth Ambassador. All of these experiences helps me grow more professionally and sets me up for future success. Lastly, I am also currently completing personal projects as a Software Engineering Fellow at Headstarter AI, building AI-powered products with React, Next.js, and Vercel.</p>
+          <p>Howdy! I am Pranav Harwadekar, a Computer Science Honors student at Texas A&M University. I am an avid problem solver and lifelong learner who is eager to continue growing professionally, and personally. Having previous experience across various industries, leading research, and product development. I interned at <a href="https://www.mckesson.com/" target="_blank" rel="noopener">McKesson (Supplylogix)</a> as a Software Engineering Intern this past summer, where I built large-scale forecasting pipelines using PySpark and MLflow to optimize pharmacy inventory across 10,000+ sites. Additionally, I have completed data analytics externships with Beats by Dre, and Webacy Inc using Web3. I eventually want to launch a security startup focusing on smart contract risk assessment.</p>
+          <p>On campus, I currently lead the Autonomous Navigation team for <a href="https://karura-project.studio.site/EN" target="_blank" rel="noopener">Texas A&M's international rover project</a>, where I build ROS2-based navigation and Stereo SLAM systems. My past research experience includes undergraduate ML projects through the <a href="https://aggieresearch.tamu.edu/" target="_blank" rel="noopener">Aggie Research Program</a> and hyperspectral imaging algorithm development in CUDA and C++. I've also developed and launched apps on the App Store.</p>
+          <p>In addition to my technical skillset, I am developing my leadership skills by serving as a <a href="https://www.cengage.com/" target="_blank" rel="noopener">Cengage Student Ambassador</a>, <a href="https://engineering.tamu.edu/academics/eh/executive-committee/index.html" target="_blank" rel="noopener">Engineering Honors Executive Committee Service Chair </a>, formerly served as <a href="https://www.unicefusa.org/" target="_blank" rel="noopener">UNICEF USA National Youth Ambassador</a>. All of these experiences helps me grow more professionally and sets me up for future success. Lastly, I am also currently completing personal projects as a Software Engineering Fellow at <a href="https://headstarter.co/" target="_blank" rel="noopener">Headstarter AI</a>, building AI-powered products with React, Next.js, and Vercel.</p>
         </div>
       </div>
       <div class="hero__right">
         <img src="assets/profile_photo.jpg" alt="Profile Photo" width="225" height="300">
       </div>
     </div>
+  
   </section>
 
   <main>
     <hr>
+      <div id="candy-zigzag" class="candy-zigzag"></div>
+
 
     <h2>Fun Facts</h2>
-    <div class="fun-facts-card">
-      <button class="fun-facts-arrow" id="funFactPrev" aria-label="Previous Fun Fact">&#8592;</button>
-      <div class="fun-facts-content" id="funFactContent"></div>
-      <button class="fun-facts-arrow" id="funFactNext" aria-label="Next Fun Fact">&#8594;</button>
+    <div id="funFactsCandy" class="fun-facts-candy" style="display:none;">
+      <!-- Cards will be injected by JS -->
     </div>
-    <div class="fun-facts-dots" id="funFactDots"></div>
-    <script src="scripts.js"></script>
+    <div id="funFactsClassic" style="display:block;">
+      <div class="fun-facts-card">
+        <button class="fun-facts-arrow" id="funFactPrev" aria-label="Previous Fun Fact">&#8592;</button>
+        <div class="fun-facts-content" id="funFactContent"></div>
+        <button class="fun-facts-arrow" id="funFactNext" aria-label="Next Fun Fact">&#8594;</button>
+      </div>
+      <div class="fun-facts-dots" id="funFactDots"></div>
+    </div>
     <hr>
 
     <div class="about-sections">
@@ -70,7 +81,6 @@
         <div class="personality-dots" id="personalityDots"></div>
       </div>
     </div>
-    <script src="scripts.js"></script>
     <hr>
   </main>
 
@@ -94,5 +104,38 @@
     </div>
     <p class="footer-copyright">© 2025 Pranav Harwadekar</p>
   </footer>
+  <script>
+(function() {
+  const btn = document.getElementById('themeToggle');
+  const linkEl = document.getElementById('theme-stylesheet');
+  const THEME_KEY = 'site-theme';
+  
+  if (btn && linkEl) {
+    // Load saved theme on page load
+    const savedTheme = localStorage.getItem(THEME_KEY) || 'default';
+    if (savedTheme === 'candy') {
+      linkEl.setAttribute('href', 'style2.css');
+      btn.textContent = 'Classic Theme';
+    } else {
+      linkEl.setAttribute('href', 'style.css');
+      btn.textContent = 'Candy Theme';
+    }
+    
+    // Handle theme toggle
+    btn.addEventListener('click', function() {
+      const current = linkEl.getAttribute('href') || 'style.css';
+      const next = current.indexOf('style2.css') !== -1 ? 'style.css' : 'style2.css';
+      const theme = next.indexOf('style2.css') !== -1 ? 'candy' : 'default';
+      
+      // Update stylesheet and button text
+      linkEl.setAttribute('href', next);
+      btn.textContent = next.indexOf('style2.css') !== -1 ? 'Classic Theme' : 'Candy Theme';
+      
+      // Save theme preference
+      localStorage.setItem(THEME_KEY, theme);
+    });
+  }
+})();
+</script>
 </body>
 </html>

@@ -3,7 +3,9 @@
 <html>
 <head>
 <title>Pranav Harwadekar</title>
-<link rel="stylesheet" type="text/css" href="style.css"></link>
+<link id="theme-stylesheet" rel="stylesheet" type="text/css" href="style.css"></link>
+<script src="scripts.js" defer></script>
+
 </head>
 <body>  
     <header class="navbar-header">
@@ -16,50 +18,87 @@
           <li class="nav-item"><a href="qualifications.html">Qualifications</a></li>
           <li class="nav-item"><a href="service.html">Service</a></li>
           <li class="nav-item"><a href="genai.html">Hobbies/Timeline</a></li>
+          <li class="nav-item"><button id="themeToggle" class="theme-toggle" type="button">Candy Theme</button></li>
         </ul>
       </nav>
     </div>
   </header>
+  
     <div class="page-container">
 <h2>Technical Background</h2>
 <p>I have built a strong foundation in computer science through projects, coursework, research, mentorship, internships etc and am passionate about using technology to solve real-world problems. Taking on computer science research within machine learning as well as courses like computational data science, statistics and more has equipped me with the skills to tackle complex challenges. I have my own personal projects that showcase my abilities in these areas available on my <a href="https://github.com/pharwadekar">GitHub</a></p>
 <hr>
-<h2>Programming Languages/Frameworks</h2>
-<div class="tag-container">
-    <span class="tag">Python</span>
-    <span class="tag">Java</span>
-    <span class="tag">C++</span>
-    <span class="tag">JavaScript</span>
-    <span class="tag">HTML/CSS</span>
-    <span class="tag">React</span>
+
+<!-- Wrap this content in a div that only shows with style.css -->
+<div class="default-theme-only">
+  <h2>Programming Languages/Frameworks</h2>
+  <div class="tag-container">
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">C++</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">React</span>
+  </div>
+  <hr>
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="assets/projects1.jpg" alt="Project 1" width="300" height="200">
+      <div class="project-info">
+        <h3>Criminality</h3>
+        <p>AI lie detector that uses machine learning and facial recognition to analyze micro-expressions and detect deception. Uses transcription audio of court cases and compares to witness testimonies to generate insights on the court proceedings.</p>
+        <a href="https://github.com/pharwadekar/criminality" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="assets/projects2.jpg" alt="Project 2" width="300" height="500">
+      <div class="project-info">
+        <h3>Pantry Pal</h3>
+        <p>Using computer vision for pantry tracking and adding elements to shopping lists. The app helps users manage their pantry inventory and suggests recipes based on available ingredients.</p>
+        <a href="https://github.com/pharwadekar/build4good" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="assets/projects3.jpg" alt="Project 3" width="300" height="200">
+      <div class="project-info">
+        <h3>Datathon Cookie Regression Challenge</h3>
+        <p>Built a regression-based data science challenge with over 200 participants. The goal was to teach and apply regression and curve-fitting techniques by asking participants to determine the equation of a shape based on a set of points.</p>
+        <a href="https://github.com/tamu-datathon-org/MiniD25/tree/main/CookieRegressionChallenge" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </div>
 </div>
-<hr>
-<h2>Projects</h2>
-<div class="projects-container">
-  <div class="project-card">
-    <img src="assets/projects1.jpg" alt="Project 1" width="300" height="200">
-    <div class="project-info">
-      <h3>Criminality</h3>
-      <p>AI lie detector that uses machine learning and facial recognition to analyze micro-expressions and detect deception. Uses transcription audio of court cases and compares to witness testimonies to generate insights on the court proceedings.</p>
-      <a href="https://github.com/pharwadekar/criminality" target="_blank">View on GitHub</a>
+
+<div class="candy-theme-only" style="display: none;">
+  <div class="portfolio-main">
+    <div class="portfolio-left">
+      <h2 class="portfolio-section-title">Languages</h2>
+      <div class="portfolio-tags">
+        <span class="portfolio-tag highlight">Python</span>
+        <span class="portfolio-tag highlight">Java</span>
+        <span class="portfolio-tag">C++</span>
+        <span class="portfolio-tag">JavaScript</span>
+        <span class="portfolio-tag highlight">HTML/CSS</span>
+        <span class="portfolio-tag">React</span>
+      </div>
+    </div>
+    <div class="portfolio-right">
+      <div class="portfolio-carousel">
+        <button class="portfolio-arrow" id="portfolio-prev">&#8249;</button>
+        <div class="portfolio-carousel-content">
+          <img id="portfolio-image" src="assets/projects1.jpg" alt="Project 1" />
+          <div id="portfolio-caption" class="portfolio-caption"></div>
+        </div>
+        <button class="portfolio-arrow" id="portfolio-next">&#8250;</button>
+      </div>
+      <div class="portfolio-dots" id="portfolio-dots"></div>
+      <div class="portfolio-link">
+        <a id="portfolio-github" href="https://github.com/pharwadekar/criminality" target="_blank">View on GitHub</a>
+      </div>
     </div>
   </div>
-  <div class="project-card">
-    <img src="assets/projects2.jpg" alt="Project 2" width="300" height="500">
-    <div class="project-info">
-      <h3>Pantry Pal</h3>
-      <p>Using computer vision for pantry tracking and adding elements to shopping lists. The app helps users manage their pantry inventory and suggests recipes based on available ingredients.</p>
-      <a href="https://github.com/pharwadekar/build4good" target="_blank">View on GitHub</a>
-    </div>
-  </div>
-  <div class="project-card">
-    <img src="assets/projects3.jpg" alt="Project 3" width="300" height="200">
-    <div class="project-info">
-      <h3>Datathon Cookie Regression Challenge</h3>
-      <p>Built a regression-based data science challenge with over 200 participants. The goal was to teach and apply regression and curve-fitting techniques by asking participants to determine the equation of a shape based on a set of points.</p>
-      <a href="https://github.com/tamu-datathon-org/MiniD25/tree/main/CookieRegressionChallenge" target="_blank">View on GitHub</a>
-    </div>
-  </div>
+  <div class="portfolio-zigzag-bottom br"></div>
 </div>
 <hr>
   <footer>
@@ -82,5 +121,69 @@
     </div>
     <p class="footer-copyright">© 2025 Pranav Harwadekar</p>
   </footer>
+  <script>
+    (function() {
+      const btn = document.getElementById('themeToggle');
+      const linkEl = document.getElementById('theme-stylesheet');
+      const THEME_KEY = 'site-theme';
+      
+      if (btn && linkEl) {
+        // Load saved theme on page load
+        const savedTheme = localStorage.getItem(THEME_KEY) || 'default';
+        if (savedTheme === 'candy') {
+          linkEl.setAttribute('href', 'style2.css');
+          btn.textContent = 'Classic Theme';
+        } else {
+          linkEl.setAttribute('href', 'style.css');
+          btn.textContent = 'Candy Theme';
+        }
+        
+        // Handle theme toggle
+        btn.addEventListener('click', function() {
+          const current = linkEl.getAttribute('href') || 'style.css';
+          const next = current.indexOf('style2.css') !== -1 ? 'style.css' : 'style2.css';
+          const theme = next.indexOf('style2.css') !== -1 ? 'candy' : 'default';
+          
+          // Update stylesheet and button text
+          linkEl.setAttribute('href', next);
+          btn.textContent = next.indexOf('style2.css') !== -1 ? 'Classic Theme' : 'Candy Theme';
+          
+          // Show/hide candy theme elements
+          const candyThemeElements = document.querySelectorAll('.candy-theme-only');
+          candyThemeElements.forEach(element => {
+            element.style.display = next.includes('style2.css') ? 'block' : 'none';
+          });
+          
+          // Show/hide default theme elements
+          const defaultThemeElements = document.querySelectorAll('.default-theme-only');
+          defaultThemeElements.forEach(element => {
+            element.style.display = next.includes('style2.css') ? 'none' : 'block';
+          });
+          
+          // Dispatch event to update carousel if visible
+          if (next.includes('style2.css')) {
+            setTimeout(() => {
+              const event = new Event('updatePortfolioCarousel');
+              document.dispatchEvent(event);
+            }, 100);
+          }
+          
+          // Save theme preference
+          localStorage.setItem(THEME_KEY, theme);
+        });
+        
+        // Also update on page load
+        const candyThemeElements = document.querySelectorAll('.candy-theme-only');
+        candyThemeElements.forEach(element => {
+          element.style.display = linkEl.getAttribute('href').includes('style2.css') ? 'block' : 'none';
+        });
+        
+        const defaultThemeElements = document.querySelectorAll('.default-theme-only');
+        defaultThemeElements.forEach(element => {
+          element.style.display = linkEl.getAttribute('href').includes('style2.css') ? 'none' : 'block';
+        });
+      }
+    })();
+    </script>
 </body>
 </html>
